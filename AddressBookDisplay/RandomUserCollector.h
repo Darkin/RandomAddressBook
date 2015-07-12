@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSOperationQueueSingleton.h"
 
 @protocol RandomUserCollectorProtocol <NSObject>
 @optional
@@ -22,7 +23,6 @@
 
 @property (nonatomic, strong) NSURL* url;
 @property (nonatomic, strong) NSURLConnection *connection;
-@property (nonatomic, strong) NSOperationQueue *operationQueue;
 @property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSDate *lastModified;
 @property (nonatomic, assign) NSTimeInterval timeout;

@@ -10,6 +10,6 @@
 
 @interface NSOperationQueueSingleton : NSOperationQueue
 
-+ (id)sharedManager;
++ (instancetype)sharedInstance;
 
 @end

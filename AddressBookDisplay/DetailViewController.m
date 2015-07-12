@@ -32,7 +32,7 @@
         self.userDetails.text = [RandomUserConverter  getFullNameFromUserDictionary:(NSDictionary*)self.detailItem];
         self.userContent.text = [RandomUserConverter getAddressFromUserDictionary:(NSDictionary*)self.detailItem];
         self.title = [RandomUserConverter  getFullNameFromUserDictionary:(NSDictionary*)self.detailItem];
-        [RandomUserConverter getLargeImageFromUserDictionary:(NSDictionary*)self.detailItem withOperationQueue:[NSOperationQueueSingleton sharedManager] withCompletion:^(BOOL complete, UIImage *image) {
+        [RandomUserConverter getLargeImageFromUserDictionary:(NSDictionary*)self.detailItem withOperationQueue:[NSOperationQueueSingleton sharedInstance] withCompletion:^(BOOL complete, UIImage *image) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
                 //need to ensure all screen updates are done on the main queue
                 self.largeImage.image = image;

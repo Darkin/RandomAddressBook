@@ -17,7 +17,6 @@
 }
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-@property (strong, nonatomic) NSOperationQueue *operationQueue;
 @property (strong, nonatomic) RandomUserCollector *randomUserCollector;
 
 

@@ -30,13 +30,8 @@
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    if (self.operationQueue == nil) {
-        self.operationQueue = [NSOperationQueueSingleton sharedManager];
-    }
-    
     RandomUserCollector *userCollector = [[RandomUserCollector alloc] init];
     userCollector.delegate = self;
-    userCollector.operationQueue = self.operationQueue;
     [userCollector startDownload];
 }
 

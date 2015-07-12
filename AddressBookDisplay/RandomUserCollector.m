@@ -31,14 +31,9 @@
                                                 cachePolicy:NSURLRequestUseProtocolCachePolicy
                                             timeoutInterval:_timeout];
     
-    if (self.operationQueue == nil) {
-        self.operationQueue = [[NSOperationQueue alloc] init];
-        self.operationQueue.maxConcurrentOperationCount = 5;
-    }
-    
-    
+
     //normally would use delegates for connection but since have no real control (and don't care about results) a block will work fine
-    [NSURLConnection sendAsynchronousRequest:theRequest queue:self.operationQueue completionHandler:
+    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueueSingleton sharedInstance] completionHandler:
      ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
          
          NSDictionary *dataDictionary = nil;
