@@ -47,13 +47,18 @@
                      NSDictionary *tempDictionary = [tempArray objectAtIndex:i];
                      [populatedHouseArray addObject:tempDictionary];
                  }
-                 //delegate is weaklinked so should not create problems with referenced in block
-                 [self.delegate RandomUserCollectorDownloadedwithArray:populatedHouseArray];
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     [self.delegate RandomUserCollectorDownloadedwithArray:populatedHouseArray];
+                 });
              }
          }else{
              //the connection failed somehow
              if (self.delegate != nil) {
-                 [self.delegate RandomUserCollectionDownloadFailed];
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     
+                     [self.delegate RandomUserCollectionDownloadFailed];
+                 });
+                 
              }
          }
          

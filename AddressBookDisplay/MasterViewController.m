@@ -99,10 +99,7 @@
 -(void)RandomUserCollectorDownloadedwithArray:(NSArray *)array{
     NSLog(@"Data: %@",array);
     self.objects = [NSMutableArray arrayWithArray:array];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
-        //need to ensure all screen updates are done on the main queue
-        [self.tableView reloadData];
-    }];
+    [self.tableView reloadData];
 }
 
 -(void) RandomUserCollectionDownloadFailed{
