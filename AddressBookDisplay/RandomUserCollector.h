@@ -11,8 +11,21 @@
 
 @protocol RandomUserCollectorProtocol <NSObject>
 @optional
+/**
+ * delegate call that lets you know that the data request failed
+ * @author Darren Larkin
+ *
+ * @return none
+ */
 - (void) RandomUserCollectionDownloadFailed;
 @required
+/**
+ * delegate call that gives the random user information
+ * @author Darren Larkin
+ *
+ * @param array The array of downloaded random user information
+ * @return none
+ */
 - (void) RandomUserCollectorDownloadedwithArray:(NSArray*)array;
 @end
 
